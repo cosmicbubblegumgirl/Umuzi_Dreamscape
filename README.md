@@ -4,6 +4,22 @@ Umuzi Dreamscape is an interactive learner community app built around project
 sharing, peer feedback, live build previews, sticker reactions, learning
 roadmaps, collaboration tasks, and portfolio evidence.
 
+Live GitHub launch page:
+
+```text
+https://cosmicbubblegumgirl.github.io/Umuzi_Dreamscape/
+```
+
+Mobile downloads:
+
+```text
+Android APK:
+https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-Android-debug.apk
+
+iOS wrapper project:
+https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-iOS-wrapper.zip
+```
+
 The interface follows the concept deck direction: warm paper textures, Umuzi
 navy, leaf green, coral, lilac, and sun accents. It is designed to feel polished
 enough for career development while still feeling welcoming and community-led.

@@ -289,6 +289,16 @@ const resources: Array<{
 
 const stages = ["Ideation", "Prototype", "Build", "Testing", "Launch", "Review"];
 const taskStatuses: TaskRecord["status"][] = ["todo", "doing", "done"];
+const mobileDownloads = [
+  {
+    label: "Android APK",
+    href: "https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-Android-debug.apk",
+  },
+  {
+    label: "iOS wrapper",
+    href: "https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-iOS-wrapper.zip",
+  },
+];
 
 export default function Home() {
   const [data, setData] = useState<AppData>(emptyData);
@@ -840,6 +850,14 @@ export default function Home() {
         <span className="footer-disclaimer">
           Independent concept demo for learning and portfolio exploration. No
           affiliation or endorsement is implied.
+        </span>
+        <span className="mobile-downloads" aria-label="Mobile app downloads">
+          {mobileDownloads.map((download) => (
+            <a key={download.label} href={download.href}>
+              <Download size={14} />
+              {download.label}
+            </a>
+          ))}
         </span>
         <span>quantum_cupcake</span>
       </footer>

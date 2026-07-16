@@ -1749,6 +1749,29 @@ p {
   text-align: center;
 }
 
+.mobile-downloads {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.mobile-downloads a {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 10px;
+  border: 1px solid rgba(6, 38, 83, 0.12);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
 .site-footer span:first-child,
 .site-footer span:last-child {
   white-space: nowrap;
