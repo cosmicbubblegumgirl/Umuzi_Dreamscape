@@ -128,8 +128,6 @@ export function getDatabase() {
     seedDatabase(globalThis.dreamscapeDatabase);
   }
 
-  migrateDatabase(globalThis.dreamscapeDatabase);
-
   return globalThis.dreamscapeDatabase;
 }
 
@@ -444,16 +442,6 @@ function createSchema(database: DatabaseSync) {
       created_at TEXT NOT NULL
     );
   `);
-}
-
-function migrateDatabase(database: DatabaseSync) {
-  database
-    .prepare(
-      `UPDATE builds
-       SET sandbox_url = ''
-       WHERE sandbox_url IN ('https://example.com', 'http://example.com', 'https://example.com/')`,
-    )
-    .run();
 }
 
 function seedDatabase(database: DatabaseSync) {

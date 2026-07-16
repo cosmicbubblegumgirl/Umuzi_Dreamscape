@@ -273,7 +273,7 @@ const resources: Array<{
   {
     title: "Learning Hub",
     icon: GraduationCap,
-    detail: "Guides, templates, and tutorials",
+    detail: "Guides, walkthroughs, and tutorials",
   },
   {
     title: "Mentor lanes",

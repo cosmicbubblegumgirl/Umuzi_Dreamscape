@@ -39,7 +39,7 @@ enough for career development while still feeling welcoming and community-led.
   Exam Lab, and SAP CAP Simulator.
 - Custom Umuzi Dreamscape mark and favicon.
 
-Default local login:
+Local demo login:
 
 ```text
 username: quantum_cupcake
