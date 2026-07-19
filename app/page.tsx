@@ -25,6 +25,7 @@ import {
   Heart,
   Home as HomeIcon,
   LayoutDashboard,
+  Laptop,
   LogOut,
   MessageCircle,
   MessageSquare,
@@ -43,6 +44,14 @@ import {
 } from "lucide-react";
 
 type SurfaceKey = "feed" | "build" | "learn" | "chat" | "tasks" | "evidence";
+
+type DesktopInstallPrompt = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{
+    outcome: "accepted" | "dismissed";
+    platform: string;
+  }>;
+};
 
 type UserRecord = {
   id: string;
@@ -292,6 +301,7 @@ const taskStatuses: TaskRecord["status"][] = ["todo", "doing", "done"];
 const mobileReleaseTag = "v0.1.1";
 const mobileReleaseBase =
   "https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases";
+const desktopWebUrl = "https://cosmicbubblegumgirl.github.io/Umuzi_Dreamscape/";
 const mobileDownloads = [
   {
     label: "Android APK",
@@ -323,6 +333,9 @@ export default function Home() {
   const [showCreateBuild, setShowCreateBuild] = useState(false);
   const [status, setStatus] = useState("Ready to build");
   const [authError, setAuthError] = useState("");
+  const [desktopInstallPrompt, setDesktopInstallPrompt] =
+    useState<DesktopInstallPrompt | null>(null);
+  const [desktopInstallReady, setDesktopInstallReady] = useState(false);
   const [newBuild, setNewBuild] = useState({
     title: "",
     role: "Learner builder",
@@ -351,6 +364,32 @@ export default function Home() {
     const timer = window.setTimeout(() => void loadApp(), 0);
     return () => window.clearTimeout(timer);
   }, [loadApp]);
+
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/sw.js").catch(() => undefined);
+    }
+
+    const handleInstallPrompt = (event: Event) => {
+      event.preventDefault();
+      setDesktopInstallPrompt(event as DesktopInstallPrompt);
+      setDesktopInstallReady(true);
+    };
+
+    const handleInstalled = () => {
+      setDesktopInstallPrompt(null);
+      setDesktopInstallReady(false);
+      setStatus("Desktop app installed");
+    };
+
+    window.addEventListener("beforeinstallprompt", handleInstallPrompt);
+    window.addEventListener("appinstalled", handleInstalled);
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handleInstallPrompt);
+      window.removeEventListener("appinstalled", handleInstalled);
+    };
+  }, []);
 
   const selectedBuild = useMemo(() => {
     return (
@@ -417,6 +456,24 @@ export default function Home() {
     await postJson("/api/auth/logout", {});
     await loadApp();
     setStatus("Signed out");
+  }
+
+  async function openDesktopApp() {
+    if (desktopInstallPrompt) {
+      await desktopInstallPrompt.prompt();
+      const choice = await desktopInstallPrompt.userChoice.catch(() => null);
+      setDesktopInstallPrompt(null);
+      setDesktopInstallReady(false);
+      setStatus(
+        choice?.outcome === "accepted"
+          ? "Desktop app install started"
+          : "Desktop install dismissed",
+      );
+      return;
+    }
+
+    window.open(desktopWebUrl, "_blank", "noopener,noreferrer");
+    setStatus("Desktop browser app opened");
   }
 
   function chooseBuild(buildId: string, nextSurface: SurfaceKey = "build") {
@@ -866,6 +923,37 @@ export default function Home() {
               target="_blank"
             >
               View release {mobileReleaseTag}
+              <ExternalLink size={14} />
+            </a>
+          </div>
+
+          <div className="rail-card desktop-card">
+            <div className="download-heading">
+              <div>
+                <span className="eyebrow">Desktop app</span>
+                <h2>Browser-based workspace</h2>
+              </div>
+              <Laptop size={20} />
+            </div>
+            <p>
+              Install Umuzi Dreamscape as a standalone desktop web app, or open
+              the hosted browser version in a new window.
+            </p>
+            <button
+              className="desktop-install-button"
+              type="button"
+              onClick={openDesktopApp}
+            >
+              <Laptop size={16} />
+              {desktopInstallReady ? "Install desktop app" : "Open desktop app"}
+            </button>
+            <a
+              className="release-note"
+              href={desktopWebUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Open live browser app
               <ExternalLink size={14} />
             </a>
           </div>

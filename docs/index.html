@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071f36" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <title>Umuzi Dreamscape</title>
     <style>
       :root {
@@ -254,7 +257,8 @@
           </div>
         </div>
         <div class="actions">
-          <a class="primary" href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape">View source</a>
+          <a class="primary" href="./" data-install-desktop>Open desktop app</a>
+          <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape">View source</a>
           <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/tag/v0.1.1">Mobile downloads</a>
         </div>
       </header>
@@ -282,6 +286,13 @@
             <strong>Demo login</strong>
             <p>username: quantum_cupcake<br />password: dreamscape</p>
           </div>
+          <div class="panel">
+            <strong>Desktop browser app</strong>
+            <p>
+              In Chrome or Edge, use the desktop app button or the browser install
+              option to keep Umuzi Dreamscape in its own window.
+            </p>
+          </div>
         </section>
 
         <section class="preview" aria-label="Umuzi Dreamscape preview">
@@ -307,5 +318,28 @@
         </span>
       </footer>
     </main>
+    <script>
+      const installLink = document.querySelector("[data-install-desktop]");
+      let desktopPrompt;
+
+      window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        desktopPrompt = event;
+        if (installLink) installLink.textContent = "Install desktop app";
+      });
+
+      installLink?.addEventListener("click", async (event) => {
+        if (!desktopPrompt) return;
+        event.preventDefault();
+        await desktopPrompt.prompt();
+        desktopPrompt = undefined;
+      });
+
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js").catch(() => undefined);
+        });
+      }
+    </script>
   </body>
 </html>

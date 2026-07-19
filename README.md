@@ -10,6 +10,13 @@ Live GitHub launch page:
 https://cosmicbubblegumgirl.github.io/Umuzi_Dreamscape/
 ```
 
+Desktop browser app:
+
+```text
+Open the launch page in Chrome or Edge and choose "Install desktop app" when
+the install prompt appears. The app also includes a browser fallback button.
+```
+
 Mobile downloads:
 
 ```text
@@ -27,6 +34,7 @@ enough for career development while still feeling welcoming and community-led.
 ## Features
 
 - Local login and user database, seeded with `quantum_cupcake`.
+- Installable desktop browser app with manifest, service worker, and app icons.
 - Responsive learner workspace with desktop and mobile-style views.
 - Home feed for recent builds, demo student projects, and progress snapshots.
 - Build detail surface with progress editing, tags, embedded sandbox URLs, and mentor mode.
@@ -67,4 +75,5 @@ npm run build
 - `app/api/` contains login, app data, build, message, task, and evidence routes.
 - `lib/database.ts` contains the local SQLite schema and seed data.
 - `public/favicon.svg` contains the custom Dreamscape icon.
+- `public/manifest.webmanifest` and `public/sw.js` power the desktop browser app.
 - `public/stickers/` contains the imported sticker artwork.

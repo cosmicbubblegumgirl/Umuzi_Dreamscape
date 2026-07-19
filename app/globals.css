@@ -1734,9 +1734,24 @@ p {
     var(--white);
 }
 
+.desktop-card {
+  gap: 14px;
+  background:
+    linear-gradient(135deg, rgba(170, 145, 223, 0.18), transparent 54%),
+    var(--white);
+}
+
+.desktop-card p {
+  margin: 0;
+  color: #5d6672;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .download-heading,
 .download-link,
-.release-note {
+.release-note,
+.desktop-install-button {
   display: flex;
   align-items: center;
 }
@@ -1822,6 +1837,29 @@ p {
   text-decoration: none;
 }
 
+.desktop-install-button {
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  width: 100%;
+  border: 1px solid rgba(6, 38, 83, 0.12);
+  border-radius: 8px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 950;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.desktop-install-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(47, 125, 91, 0.42);
+  box-shadow: 0 14px 30px rgba(6, 38, 83, 0.12);
+}
+
 .site-footer {
   display: grid;
   grid-template-columns: auto minmax(180px, 1fr) auto auto;
@@ -1903,7 +1941,7 @@ p {
 
   .insight-rail {
     grid-column: 1 / -1;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
   .phone {
