@@ -289,16 +289,24 @@ const resources: Array<{
 
 const stages = ["Ideation", "Prototype", "Build", "Testing", "Launch", "Review"];
 const taskStatuses: TaskRecord["status"][] = ["todo", "doing", "done"];
+const mobileReleaseTag = "v0.1.1";
+const mobileReleaseBase =
+  "https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases";
 const mobileDownloads = [
   {
     label: "Android APK",
-    href: "https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-Android-debug.apk",
+    size: "4.1 MB",
+    detail: "Debug APK for Android testing",
+    href: `${mobileReleaseBase}/download/${mobileReleaseTag}/Umuzi-Dreamscape-Android-debug.apk`,
   },
   {
     label: "iOS wrapper",
-    href: "https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-iOS-wrapper.zip",
+    size: "221 KB",
+    detail: "Capacitor wrapper for Xcode",
+    href: `${mobileReleaseBase}/download/${mobileReleaseTag}/Umuzi-Dreamscape-iOS-wrapper.zip`,
   },
 ];
+const mobileReleaseUrl = `${mobileReleaseBase}/tag/${mobileReleaseTag}`;
 
 export default function Home() {
   const [data, setData] = useState<AppData>(emptyData);
@@ -825,6 +833,43 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="rail-card download-card">
+            <div className="download-heading">
+              <div>
+                <span className="eyebrow">Mobile builds</span>
+                <h2>Download wrappers</h2>
+              </div>
+              <MonitorSmartphone size={20} />
+            </div>
+            <div className="download-list">
+              {mobileDownloads.map((download, index) => (
+                <a
+                  className={index === 0 ? "download-link primary" : "download-link"}
+                  href={download.href}
+                  key={download.label}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Download size={16} />
+                  <span>
+                    {download.label}
+                    <small>{download.detail}</small>
+                  </span>
+                  <em>{download.size}</em>
+                </a>
+              ))}
+            </div>
+            <a
+              className="release-note"
+              href={mobileReleaseUrl}
+              rel="noreferrer"
+              target="_blank"
+            >
+              View release {mobileReleaseTag}
+              <ExternalLink size={14} />
+            </a>
+          </div>
+
           <div className="rail-card metrics-card">
             <span className="eyebrow">Community context</span>
             <dl>
@@ -853,7 +898,12 @@ export default function Home() {
         </span>
         <span className="mobile-downloads" aria-label="Mobile app downloads">
           {mobileDownloads.map((download) => (
-            <a key={download.label} href={download.href}>
+            <a
+              key={download.label}
+              href={download.href}
+              rel="noreferrer"
+              target="_blank"
+            >
               <Download size={14} />
               {download.label}
             </a>

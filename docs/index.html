@@ -13,6 +13,7 @@
         --coral: #f15c4c;
         --paper: #fffdf8;
         --line: rgba(7, 31, 54, 0.12);
+        --shadow: 0 22px 64px rgba(7, 31, 54, 0.08);
       }
 
       * {
@@ -43,8 +44,8 @@
       footer {
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: rgba(255, 253, 248, 0.82);
-        box-shadow: 0 22px 64px rgba(7, 31, 54, 0.08);
+        background: rgba(255, 253, 248, 0.9);
+        box-shadow: var(--shadow);
       }
 
       header {
@@ -145,6 +146,30 @@
         color: white;
       }
 
+      a:hover {
+        border-color: rgba(47, 125, 91, 0.42);
+        box-shadow: 0 12px 28px rgba(7, 31, 54, 0.08);
+      }
+
+      .downloads a {
+        display: grid;
+        min-width: min(100%, 250px);
+        min-height: 62px;
+        align-content: center;
+        justify-content: start;
+        gap: 3px;
+      }
+
+      .downloads small {
+        color: #667085;
+        font-size: 0.76rem;
+        font-weight: 800;
+      }
+
+      .downloads a.primary small {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
       .grid {
         display: grid;
         grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
@@ -230,7 +255,7 @@
         </div>
         <div class="actions">
           <a class="primary" href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape">View source</a>
-          <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest">Mobile downloads</a>
+          <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/tag/v0.1.1">Mobile downloads</a>
         </div>
       </header>
 
@@ -244,11 +269,13 @@
             the repository and runs with the included Next.js server.
           </p>
           <div class="downloads">
-            <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-Android-debug.apk">
+            <a class="primary" href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.1/Umuzi-Dreamscape-Android-debug.apk">
               Download Android APK
+              <small>4.1 MB debug build</small>
             </a>
-            <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-iOS-wrapper.zip">
+            <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.1/Umuzi-Dreamscape-iOS-wrapper.zip">
               Download iOS wrapper
+              <small>221 KB Capacitor archive</small>
             </a>
           </div>
           <div class="panel">

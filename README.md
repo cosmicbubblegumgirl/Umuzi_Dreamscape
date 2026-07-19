@@ -14,10 +14,10 @@ Mobile downloads:
 
 ```text
 Android APK:
-https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-Android-debug.apk
+https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.1/Umuzi-Dreamscape-Android-debug.apk
 
 iOS wrapper project:
-https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/latest/download/Umuzi-Dreamscape-iOS-wrapper.zip
+https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.1/Umuzi-Dreamscape-iOS-wrapper.zip
 ```
 
 The interface follows the concept deck direction: warm paper textures, Umuzi
