@@ -27,15 +27,16 @@ const projectSeeds = [
     title: "Nimbus Nook",
     owner: "Nimbus Nandi",
     initials: "NN",
-    role: "Community cloud builder",
-    sector: "Peer support",
-    summary: "A cozy mentor-nook where learners park blockers, collect kind nudges, and find a review buddy.",
-    stage: "Prototype",
-    progress: 58,
+    role: "Wellbeing experience designer",
+    sector: "Mental wellbeing",
+    summary: "A gentle anxiety calm studio with grounding tools, mood check-ins, and a quiet place to reset.",
+    stage: "Live",
+    progress: 100,
     likes: 77,
-    tags: ["Support", "Mentors", "Community"],
+    tags: ["Wellbeing", "Calm", "Self-care"],
     art: "care",
-    url: "./project.html?id=nimbus-nook",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/nimbus-nook/",
   },
   {
     id: "learn-loop",
@@ -44,13 +45,14 @@ const projectSeeds = [
     initials: "LL",
     role: "Learning flow designer",
     sector: "Skills lab",
-    summary: "A study loop that turns lessons into tiny quests, reflection notes, peer review, and next-step prompts.",
-    stage: "Build",
-    progress: 74,
+    summary: "An adaptive learning studio that turns study goals into focused loops, practice prompts, and visible progress.",
+    stage: "Live",
+    progress: 100,
     likes: 112,
-    tags: ["Learning", "Roadmap", "Quests"],
+    tags: ["Learning", "Practice", "Progress"],
     art: "sound",
-    url: "./project.html?id=learn-loop",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/learnloop/",
   },
   {
     id: "doodle-flow",
@@ -59,13 +61,158 @@ const projectSeeds = [
     initials: "DD",
     role: "Creative interface tinkerer",
     sector: "Digital craft",
-    summary: "A playful design board for sketching app ideas, pinning screenshots, and turning doodles into build steps.",
-    stage: "Testing",
-    progress: 69,
+    summary: "A creative community for sharing visual ideas, exploring playful work, and keeping inspiration in motion.",
+    stage: "Live",
+    progress: 100,
     likes: 98,
-    tags: ["Design", "Sketches", "Prototype"],
+    tags: ["Community", "Design", "Creative"],
     art: "kinara",
-    url: "./project.html?id=doodle-flow",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/vercel-apps-github-pages/",
+  },
+  {
+    id: "resume-radar",
+    title: "Resume Radar",
+    owner: "Radar Rethabile",
+    initials: "RR",
+    role: "Career toolkit builder",
+    sector: "Career readiness",
+    summary: "An ATS-focused resume lab for checking structure, sharpening evidence, and preparing applications with confidence.",
+    stage: "Live",
+    progress: 100,
+    likes: 86,
+    tags: ["CV", "ATS", "Career"],
+    art: "eco",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/resume-radar/",
+  },
+  {
+    id: "moonbeam-mind",
+    title: "Moonbeam Mind",
+    owner: "Moonbeam Musa",
+    initials: "MM",
+    role: "Reflective product designer",
+    sector: "Mental wellbeing",
+    summary: "A reflective wellbeing space that helps people slow down, notice patterns, and make room for clearer thoughts.",
+    stage: "Live",
+    progress: 100,
+    likes: 93,
+    tags: ["Reflection", "Wellbeing", "Mindfulness"],
+    art: "sound",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/moonbeammind/",
+  },
+  {
+    id: "leash",
+    title: "Leash",
+    owner: "Policy Pabi",
+    initials: "LP",
+    role: "Governance systems builder",
+    sector: "Digital safety",
+    summary: "A permission and governance workspace for reviewing agent actions, approvals, and policy decisions.",
+    stage: "Live",
+    progress: 100,
+    likes: 72,
+    tags: ["Governance", "Permissions", "Safety"],
+    art: "care",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/Leash/",
+  },
+  {
+    id: "sap-spellbook",
+    title: "SAP Spellbook Academy",
+    owner: "Spellbook Sipho",
+    initials: "SA",
+    role: "Certification practice builder",
+    sector: "Enterprise learning",
+    summary: "A two-stream certification practice space for Integration Developer and SAP HANA learners.",
+    stage: "Live",
+    progress: 100,
+    likes: 81,
+    tags: ["SAP", "Practice", "Certification"],
+    art: "kinara",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/the-plan-of-action/",
+  },
+  {
+    id: "focusflux",
+    title: "FocusFlux",
+    owner: "Focus Fikile",
+    initials: "FF",
+    role: "Accessible product designer",
+    sector: "Productivity",
+    summary: "An adaptive focus system built around flexible pulses, clear priorities, and gentler ways to regain momentum.",
+    stage: "Live",
+    progress: 100,
+    likes: 104,
+    tags: ["Focus", "Accessibility", "Planning"],
+    art: "sound",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/focusflux/",
+  },
+  {
+    id: "pantrypilot",
+    title: "PantryPilot",
+    owner: "Pantry Palesa",
+    initials: "PP",
+    role: "Commerce experience builder",
+    sector: "Everyday commerce",
+    summary: "A grocery companion that remembers staples, explains recommendations, and catches risky substitutions before checkout.",
+    stage: "Live",
+    progress: 100,
+    likes: 89,
+    tags: ["Shopping", "Planning", "Household"],
+    art: "care",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/pantrypilot/",
+  },
+  {
+    id: "hiresignal",
+    title: "HireSignal",
+    owner: "Signal Sanele",
+    initials: "HS",
+    role: "Recruiting systems builder",
+    sector: "Future of work",
+    summary: "A recruiting workspace for structured feedback, clear stage ownership, candidate updates, and evidence-led decisions.",
+    stage: "Live",
+    progress: 100,
+    likes: 96,
+    tags: ["Hiring", "Workflow", "Evidence"],
+    art: "eco",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/hiresignal/",
+  },
+  {
+    id: "greengrid",
+    title: "GreenGrid",
+    owner: "quantum_cupcake",
+    initials: "QC",
+    role: "Climate data builder",
+    sector: "Energy intelligence",
+    summary: "An energy operations dashboard that turns facility anomalies into prioritized actions, savings estimates, and carbon context.",
+    stage: "Live",
+    progress: 100,
+    likes: 131,
+    tags: ["Energy", "Climate", "Operations"],
+    art: "eco",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/greengrid/",
+  },
+  {
+    id: "ledgerlift",
+    title: "LedgerLift",
+    owner: "Ledger Lerato",
+    initials: "LL",
+    role: "Fintech product builder",
+    sector: "Small business finance",
+    summary: "A cash-flow workspace for forecasting, testing decisions, and preparing practical finance documents for small businesses.",
+    stage: "Live",
+    progress: 100,
+    likes: 88,
+    tags: ["Finance", "Forecasting", "SMEs"],
+    art: "kinara",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/ledgerlift/",
   },
   {
     id: "ecotrack",
@@ -132,15 +279,16 @@ const projectSeeds = [
     title: "FlowForge Exam Lab",
     owner: "Byte Bongi",
     initials: "BB",
-    role: "Quiz-game builder",
-    sector: "Learning games",
-    summary: "A lightweight exam lab that turns revision into timed flows and friendly question validation.",
-    stage: "Review",
-    progress: 83,
+    role: "Integration practice builder",
+    sector: "Enterprise learning",
+    summary: "An SAP Integration Suite practice simulator with practical exams, local grading, and guided tutorials.",
+    stage: "Live",
+    progress: 100,
     likes: 64,
-    tags: ["Game", "Assessment", "Revision"],
+    tags: ["SAP", "Integration", "Exams"],
     art: "eco",
-    url: "./project.html?id=flowforge",
+    live: true,
+    url: "https://cosmicbubblegumgirl.github.io/flowforge-exam-lab/",
   },
   {
     id: "cap-simulator",
@@ -157,6 +305,22 @@ const projectSeeds = [
     art: "care",
     url: "./project.html?id=cap-simulator",
   },
+];
+
+const featuredSandboxIds = [
+  "learn-loop",
+  "nimbus-nook",
+  "resume-radar",
+  "doodle-flow",
+  "moonbeam-mind",
+  "leash",
+  "flowforge",
+  "sap-spellbook",
+  "focusflux",
+  "pantrypilot",
+  "hiresignal",
+  "greengrid",
+  "ledgerlift",
 ];
 
 const seedState = {
@@ -219,10 +383,24 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function mergeSeedBuilds(savedBuilds) {
+  const savedById = new Map(savedBuilds.map((build) => [build.id, build]));
+  const managedIds = new Set(projectSeeds.map((build) => build.id));
+  const managedBuilds = projectSeeds.map((seed) => {
+    const saved = savedById.get(seed.id);
+    return saved ? { ...seed, likes: saved.likes ?? seed.likes } : seed;
+  });
+  const learnerBuilds = savedBuilds.filter((build) => !managedIds.has(build.id));
+  return [...managedBuilds, ...learnerBuilds];
+}
+
 function loadState() {
   try {
     const saved = JSON.parse(localStorage.getItem(APP_KEY));
-    if (saved?.builds && saved?.tasks && saved?.messages) return saved;
+    if (saved?.builds && saved?.tasks && saved?.messages) {
+      saved.builds = mergeSeedBuilds(saved.builds);
+      return saved;
+    }
   } catch {
     // A clean seed is more useful than a broken workspace.
   }
@@ -469,11 +647,13 @@ function renderBuilds() {
 }
 
 function renderSandboxProjects() {
-  const featured = appState.builds.slice(0, 6);
+  const featured = featuredSandboxIds
+    .map((buildId) => appState.builds.find((build) => build.id === buildId))
+    .filter(Boolean);
   byId("sandbox-projects").innerHTML = featured.map((build) => `
     <button class="${build.id === activeSandboxId ? "active" : ""}" type="button" data-sandbox-project="${escapeHtml(build.id)}">
       <span>${escapeHtml(build.initials || initials(build.title))}</span>
-      <span><strong>${escapeHtml(build.title)}</strong><small>${escapeHtml(build.stage)} · ${build.progress}%</small></span>
+      <span><strong>${escapeHtml(build.title)}</strong><small>${build.live ? "Live site" : `${escapeHtml(build.stage)} · ${build.progress}%`}</small></span>
     </button>`).join("") + `
     <button class="add-url-button" type="button" data-focus-address>＋ Paste another URL</button>`;
 }

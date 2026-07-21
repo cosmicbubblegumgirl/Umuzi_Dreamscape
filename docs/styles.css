@@ -1219,6 +1219,11 @@ label {
   display: grid;
   align-content: start;
   gap: 7px;
+  max-height: 780px;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-color: var(--line-strong) transparent;
+  scrollbar-width: thin;
 }
 
 .project-switcher button {
@@ -1885,8 +1890,11 @@ label {
   .project-switcher {
     grid-auto-flow: column;
     grid-auto-columns: minmax(185px, 1fr);
+    max-height: none;
     overflow-x: auto;
+    overflow-y: hidden;
     padding-bottom: 5px;
+    padding-right: 0;
   }
   .chat-layout { grid-template-columns: 190px minmax(0, 1fr); }
   .download-grid,

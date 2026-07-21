@@ -15,6 +15,22 @@ learner projects, live sandbox previews, sticker chat, tasks, portfolio
 evidence, and mobile and desktop downloads. The Next.js app in this repository
 adds the server-backed SQLite routes used for local development.
 
+The Embedded Project Lab includes these live builds:
+
+- [Learn Loop](https://cosmicbubblegumgirl.github.io/learnloop/)
+- [Nimbus Nook](https://cosmicbubblegumgirl.github.io/nimbus-nook/)
+- [Resume Radar](https://cosmicbubblegumgirl.github.io/resume-radar/)
+- [Doodle Flow](https://cosmicbubblegumgirl.github.io/vercel-apps-github-pages/)
+- [Moonbeam Mind](https://cosmicbubblegumgirl.github.io/moonbeammind/)
+- [Leash](https://cosmicbubblegumgirl.github.io/Leash/)
+- [FlowForge Exam Lab](https://cosmicbubblegumgirl.github.io/flowforge-exam-lab/)
+- [SAP Spellbook Academy](https://cosmicbubblegumgirl.github.io/the-plan-of-action/)
+- [FocusFlux](https://cosmicbubblegumgirl.github.io/focusflux/)
+- [PantryPilot](https://cosmicbubblegumgirl.github.io/pantrypilot/)
+- [HireSignal](https://cosmicbubblegumgirl.github.io/hiresignal/)
+- [GreenGrid](https://cosmicbubblegumgirl.github.io/greengrid/)
+- [LedgerLift](https://cosmicbubblegumgirl.github.io/ledgerlift/)
+
 Desktop browser app:
 
 ```text
@@ -51,8 +67,8 @@ enough for career development while still feeling welcoming and community-led.
 - Project chat with reactions, messages, attachments, and real sticker artwork.
 - Shared task board for moving work through To do, Doing, and Done.
 - Evidence export surface for turning project progress into a portfolio story.
-- Seeded demo projects include Nimbus Nook, Learn Loop, Doodle Flow, FlowForge
-  Exam Lab, and SAP CAP Simulator.
+- Seeded demo projects include the thirteen live Project Lab builds alongside
+  FlowForge Exam Lab, EcoTrack, and SAP CAP Simulator.
 - Custom Umuzi Dreamscape mark and favicon.
 
 Local demo login:

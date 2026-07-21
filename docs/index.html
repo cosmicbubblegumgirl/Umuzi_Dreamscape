@@ -198,7 +198,7 @@
           <section class="view" id="view-sandbox" data-view="sandbox" hidden>
             <div class="page-heading">
               <div><p class="eyebrow">Embedded project lab</p><h1>Live sandbox</h1><p>Preview learner sites in place, then open them in a clean browser tab.</p></div>
-              <span class="live-status"><i></i> Preview ready</span>
+              <span class="live-status"><i></i> 13 live projects</span>
             </div>
             <div class="sandbox-layout">
               <aside class="project-switcher" id="sandbox-projects" aria-label="Sandbox projects"></aside>
@@ -210,15 +210,15 @@
                     <input id="sandbox-url" inputmode="url" aria-label="Project URL" />
                   </label>
                   <button class="icon-button" id="sandbox-reload" type="button" aria-label="Reload preview">↻</button>
-                  <a class="icon-button" id="sandbox-open" href="./project.html?id=nimbus-nook" target="_blank" rel="noreferrer" aria-label="Open project in new tab">↗</a>
+                  <a class="icon-button" id="sandbox-open" href="https://cosmicbubblegumgirl.github.io/nimbus-nook/" target="_blank" rel="noreferrer" aria-label="Open project in new tab">↗</a>
                 </div>
                 <div class="sandbox-stage">
-                  <iframe id="sandbox-frame" title="Live project preview" sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"></iframe>
+                  <iframe id="sandbox-frame" title="Live project preview" allow="clipboard-read; clipboard-write; fullscreen" sandbox="allow-downloads allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
                   <div class="sandbox-loading" id="sandbox-loading"><span></span><p>Opening project preview…</p></div>
                 </div>
                 <div class="sandbox-footer">
                   <span id="sandbox-title">Nimbus Nook</span>
-                  <span>Some external sites block embedding; use ↗ when that happens.</span>
+                  <span>Use ↗ for a full-size project view.</span>
                 </div>
               </section>
             </div>
