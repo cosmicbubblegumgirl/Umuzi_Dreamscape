@@ -15,16 +15,19 @@ Desktop browser app:
 ```text
 Open the launch page in Chrome or Edge and choose "Install desktop app" when
 the install prompt appears. The app also includes a browser fallback button.
+
+Windows desktop launcher:
+https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-Desktop-Browser-App.zip
 ```
 
 Mobile downloads:
 
 ```text
 Android APK:
-https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.1/Umuzi-Dreamscape-Android-debug.apk
+https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-Android-debug.apk
 
 iOS wrapper project:
-https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.1/Umuzi-Dreamscape-iOS-wrapper.zip
+https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-iOS-wrapper.zip
 ```
 
 The interface follows the concept deck direction: warm paper textures, Umuzi
@@ -77,3 +80,4 @@ npm run build
 - `public/favicon.svg` contains the custom Dreamscape icon.
 - `public/manifest.webmanifest` and `public/sw.js` power the desktop browser app.
 - `public/stickers/` contains the imported sticker artwork.
+- `desktop-launcher/` contains the Windows browser launcher package.

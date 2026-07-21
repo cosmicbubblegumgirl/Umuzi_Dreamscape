@@ -1,4 +1,4 @@
-name: Mobile release
+name: App release
 
 on:
   push:
@@ -52,6 +52,7 @@ jobs:
           mkdir -p release-assets
           cp android/app/build/outputs/apk/debug/app-debug.apk release-assets/Umuzi-Dreamscape-Android-debug.apk
           zip -r release-assets/Umuzi-Dreamscape-iOS-wrapper.zip ios capacitor.config.ts mobile-shell package.json package-lock.json
+          zip -r release-assets/Umuzi-Dreamscape-Desktop-Browser-App.zip desktop-launcher
 
       - name: Upload release assets
         if: startsWith(github.ref, 'refs/tags/')
@@ -62,5 +63,5 @@ jobs:
       - name: Upload workflow artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: umuzi-dreamscape-mobile
+          name: umuzi-dreamscape-apps
           path: release-assets/*

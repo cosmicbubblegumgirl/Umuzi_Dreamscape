@@ -298,8 +298,8 @@ const resources: Array<{
 
 const stages = ["Ideation", "Prototype", "Build", "Testing", "Launch", "Review"];
 const taskStatuses: TaskRecord["status"][] = ["todo", "doing", "done"];
-const mobileReleaseTag = "v0.1.1";
-const mobileReleaseBase =
+const releaseTag = "v0.1.2";
+const releaseBase =
   "https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases";
 const desktopWebUrl = "https://cosmicbubblegumgirl.github.io/Umuzi_Dreamscape/";
 const mobileDownloads = [
@@ -307,16 +307,23 @@ const mobileDownloads = [
     label: "Android APK",
     size: "4.1 MB",
     detail: "Debug APK for Android testing",
-    href: `${mobileReleaseBase}/download/${mobileReleaseTag}/Umuzi-Dreamscape-Android-debug.apk`,
+    href: `${releaseBase}/download/${releaseTag}/Umuzi-Dreamscape-Android-debug.apk`,
   },
   {
     label: "iOS wrapper",
     size: "221 KB",
     detail: "Capacitor wrapper for Xcode",
-    href: `${mobileReleaseBase}/download/${mobileReleaseTag}/Umuzi-Dreamscape-iOS-wrapper.zip`,
+    href: `${releaseBase}/download/${releaseTag}/Umuzi-Dreamscape-iOS-wrapper.zip`,
   },
 ];
-const mobileReleaseUrl = `${mobileReleaseBase}/tag/${mobileReleaseTag}`;
+const desktopDownload = {
+  label: "Desktop launcher",
+  size: "Small zip",
+  detail: "Windows Edge/Chrome app-window launcher",
+  href: `${releaseBase}/download/${releaseTag}/Umuzi-Dreamscape-Desktop-Browser-App.zip`,
+};
+const releaseUrl = `${releaseBase}/tag/${releaseTag}`;
+const appDownloads = [...mobileDownloads, desktopDownload];
 
 export default function Home() {
   const [data, setData] = useState<AppData>(emptyData);
@@ -918,11 +925,11 @@ export default function Home() {
             </div>
             <a
               className="release-note"
-              href={mobileReleaseUrl}
+              href={releaseUrl}
               rel="noreferrer"
               target="_blank"
             >
-              View release {mobileReleaseTag}
+              View release {releaseTag}
               <ExternalLink size={14} />
             </a>
           </div>
@@ -939,6 +946,19 @@ export default function Home() {
               Install Umuzi Dreamscape as a standalone desktop web app, or open
               the hosted browser version in a new window.
             </p>
+            <a
+              className="download-link desktop-download-link"
+              href={desktopDownload.href}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <Download size={16} />
+              <span>
+                {desktopDownload.label}
+                <small>{desktopDownload.detail}</small>
+              </span>
+              <em>{desktopDownload.size}</em>
+            </a>
             <button
               className="desktop-install-button"
               type="button"
@@ -984,8 +1004,8 @@ export default function Home() {
           Independent concept demo for learning and portfolio exploration. No
           affiliation or endorsement is implied.
         </span>
-        <span className="mobile-downloads" aria-label="Mobile app downloads">
-          {mobileDownloads.map((download) => (
+        <span className="mobile-downloads" aria-label="App downloads">
+          {appDownloads.map((download) => (
             <a
               key={download.label}
               href={download.href}
