@@ -1,7 +1,7 @@
 {
   "name": "Umuzi Dreamscape",
   "short_name": "Dreamscape",
-  "description": "A desktop browser app for the Umuzi Dreamscape concept demo.",
+  "description": "A learner community workspace for live builds, feedback, stickers, tasks, and portfolio evidence.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -4,11 +4,16 @@ Umuzi Dreamscape is an interactive learner community app built around project
 sharing, peer feedback, live build previews, sticker reactions, learning
 roadmaps, collaboration tasks, and portfolio evidence.
 
-Live GitHub launch page:
+Live GitHub Pages app:
 
 ```text
 https://cosmicbubblegumgirl.github.io/Umuzi_Dreamscape/
 ```
+
+The Pages build includes browser-local accounts and persistence, interactive
+learner projects, live sandbox previews, sticker chat, tasks, portfolio
+evidence, and mobile and desktop downloads. The Next.js app in this repository
+adds the server-backed SQLite routes used for local development.
 
 Desktop browser app:
 

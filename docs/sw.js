@@ -1,10 +1,20 @@
-const CACHE_NAME = "umuzi-dreamscape-pages-v1";
+const CACHE_NAME = "umuzi-dreamscape-pages-v2";
 const APP_SHELL = [
   "./",
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./project.html?id=nimbus-nook",
+  "./project.css",
+  "./project.js",
   "./favicon.svg",
   "./manifest.webmanifest",
   "./icons/desktop-192.png",
   "./icons/desktop-512.png",
+  "./stickers/keep-shipping.png",
+  "./stickers/bloom-build-become.png",
+  "./stickers/git-commit-believed.png",
+  "./stickers/debug-your-doubts.png",
 ];
 
 self.addEventListener("install", (event) => {
@@ -39,7 +49,12 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (request.mode === "navigate") {
-    event.respondWith(fetch(request).catch(() => caches.match("./")));
+    event.respondWith(
+      fetch(request).catch(async () => {
+        const cachedPage = await caches.match(request, { ignoreSearch: true });
+        return cachedPage || caches.match("./");
+      }),
+    );
     return;
   }
 

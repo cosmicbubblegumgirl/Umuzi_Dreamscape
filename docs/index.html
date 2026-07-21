@@ -3,347 +3,308 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#071f36" />
+    <meta name="theme-color" content="#08284d" />
+    <meta
+      name="description"
+      content="Umuzi Dreamscape is a learner community workspace for projects, feedback, tasks, stickers, and portfolio evidence."
+    />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Umuzi Dreamscape</title>
-    <style>
-      :root {
-        --ink: #071f36;
-        --leaf: #2f7d5b;
-        --leaf-soft: #e8f4eb;
-        --sun: #f6b941;
-        --coral: #f15c4c;
-        --paper: #fffdf8;
-        --line: rgba(7, 31, 54, 0.12);
-        --shadow: 0 22px 64px rgba(7, 31, 54, 0.08);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        min-height: 100vh;
-        margin: 0;
-        background:
-          linear-gradient(135deg, rgba(47, 125, 91, 0.14), transparent 32rem),
-          linear-gradient(315deg, rgba(246, 185, 65, 0.2), transparent 28rem),
-          var(--paper);
-        color: var(--ink);
-        font-family:
-          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-      }
-
-      main {
-        width: min(1080px, calc(100% - 32px));
-        margin: 0 auto;
-        padding: 40px 0;
-      }
-
-      header,
-      section,
-      footer {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: rgba(255, 253, 248, 0.9);
-        box-shadow: var(--shadow);
-      }
-
-      header {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 24px;
-        align-items: center;
-        padding: 28px;
-      }
-
-      .brand {
-        display: flex;
-        gap: 14px;
-        align-items: center;
-      }
-
-      .mark {
-        width: 58px;
-        height: 58px;
-        border-radius: 16px;
-        background: linear-gradient(145deg, var(--leaf), #0b6f5d);
-        position: relative;
-      }
-
-      .mark::before {
-        content: "";
-        position: absolute;
-        inset: 13px;
-        border: 5px solid white;
-        border-radius: 50% 50% 50% 8px;
-        transform: rotate(-14deg);
-      }
-
-      .mark::after {
-        content: "";
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: var(--sun);
-      }
-
-      h1,
-      h2,
-      p {
-        margin: 0;
-      }
-
-      h1 {
-        font-size: clamp(2.4rem, 8vw, 5rem);
-        line-height: 0.94;
-        letter-spacing: 0;
-      }
-
-      h2 {
-        font-size: clamp(1.45rem, 4vw, 2.2rem);
-      }
-
-      p {
-        color: #4f5d69;
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      .eyebrow {
-        color: var(--coral);
-        font-size: 0.78rem;
-        font-weight: 900;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
-      .actions,
-      .downloads {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      a {
-        display: inline-flex;
-        min-height: 44px;
-        align-items: center;
-        justify-content: center;
-        padding: 0 14px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: white;
-        color: var(--ink);
-        font-weight: 900;
-        text-decoration: none;
-      }
-
-      a.primary {
-        background: var(--ink);
-        color: white;
-      }
-
-      a:hover {
-        border-color: rgba(47, 125, 91, 0.42);
-        box-shadow: 0 12px 28px rgba(7, 31, 54, 0.08);
-      }
-
-      .downloads a {
-        display: grid;
-        min-width: min(100%, 250px);
-        min-height: 62px;
-        align-content: center;
-        justify-content: start;
-        gap: 3px;
-      }
-
-      .downloads small {
-        color: #667085;
-        font-size: 0.76rem;
-        font-weight: 800;
-      }
-
-      .downloads a.primary small {
-        color: rgba(255, 255, 255, 0.72);
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-        gap: 18px;
-        margin-top: 18px;
-      }
-
-      section {
-        display: grid;
-        gap: 18px;
-        padding: 24px;
-      }
-
-      .panel {
-        display: grid;
-        gap: 14px;
-        padding: 18px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: white;
-      }
-
-      .preview {
-        min-height: 320px;
-        overflow: hidden;
-        background:
-          linear-gradient(135deg, rgba(47, 125, 91, 0.16), transparent 40%),
-          linear-gradient(315deg, rgba(170, 145, 223, 0.16), transparent 42%),
-          white;
-      }
-
-      .phone {
-        width: min(260px, 100%);
-        min-height: 430px;
-        margin: 0 auto;
-        padding: 18px;
-        border: 8px solid #161c29;
-        border-radius: 30px;
-        background: var(--paper);
-      }
-
-      .card {
-        margin-top: 14px;
-        padding: 14px;
-        border-radius: 8px;
-        background: var(--leaf-soft);
-      }
-
-      footer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: space-between;
-        margin-top: 18px;
-        padding: 16px;
-        color: #4f5d69;
-        font-size: 0.85rem;
-        font-weight: 800;
-      }
-
-      @media (max-width: 760px) {
-        header,
-        .grid {
-          grid-template-columns: 1fr;
-        }
-
-        main {
-          width: min(100% - 20px, 1080px);
-          padding: 10px 0;
-        }
-      }
-    </style>
   </head>
   <body>
-    <main>
-      <header>
-        <div class="brand">
-          <span class="mark" aria-hidden="true"></span>
-          <div>
-            <span class="eyebrow">Concept demo</span>
-            <h1>Umuzi Dreamscape</h1>
-          </div>
+    <a class="skip-link" href="#main-content">Skip to workspace</a>
+
+    <section class="auth-screen" id="auth-screen" aria-labelledby="auth-title">
+      <div class="auth-story">
+        <div class="brand-lockup brand-lockup-large">
+          <span class="dream-mark" aria-hidden="true">
+            <span class="mark-arch"></span>
+            <span class="mark-step one"></span>
+            <span class="mark-step two"></span>
+            <span class="mark-step three"></span>
+            <span class="mark-sun"></span>
+            <span class="mark-leaf"></span>
+          </span>
+          <span>
+            <strong>Umuzi Dreamscape</strong>
+            <small>Build. Share. Become.</small>
+          </span>
         </div>
-        <div class="actions">
-          <a class="primary" href="./" data-install-desktop>Open desktop app</a>
-          <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape">View source</a>
-          <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/tag/v0.1.2">Downloads</a>
+        <div class="auth-copy">
+          <p class="eyebrow">Learner community workspace</p>
+          <h1 id="auth-title">Your ideas deserve somewhere to grow.</h1>
+          <p>
+            Share builds, test live projects, swap thoughtful feedback, and turn
+            everyday progress into portfolio evidence.
+          </p>
+        </div>
+        <div class="auth-pulse" aria-label="Community snapshot">
+          <span><strong>248</strong> active learners</span>
+          <span><strong>36</strong> builds in motion</span>
+          <span><strong>92%</strong> kind feedback</span>
+        </div>
+      </div>
+
+      <div class="auth-panel">
+        <div class="segmented" role="tablist" aria-label="Account mode">
+          <button class="active" type="button" role="tab" data-auth-mode="signin">Sign in</button>
+          <button type="button" role="tab" data-auth-mode="register">Create profile</button>
+        </div>
+        <form id="auth-form" novalidate>
+          <label class="register-field" hidden>
+            Display name
+            <input name="displayName" autocomplete="name" placeholder="e.g. Pixel Palesa" />
+          </label>
+          <label>
+            Username
+            <input name="username" autocomplete="username" required placeholder="quantum_cupcake" />
+          </label>
+          <label>
+            Password
+            <input name="password" type="password" autocomplete="current-password" required placeholder="Enter your password" />
+          </label>
+          <p class="form-error" id="auth-error" role="alert"></p>
+          <button class="button button-primary button-wide" type="submit">Enter Dreamscape</button>
+        </form>
+        <button class="demo-login" id="demo-login" type="button">
+          Use demo account <span>quantum_cupcake / dreamscape</span>
+        </button>
+        <p class="local-note">Profiles and changes are kept privately in this browser.</p>
+      </div>
+    </section>
+
+    <div class="app-shell" id="app-shell" hidden>
+      <header class="topbar">
+        <button class="icon-button mobile-menu" id="mobile-menu" type="button" aria-label="Open navigation">☰</button>
+        <a class="brand-lockup" href="#home" data-nav="home" aria-label="Umuzi Dreamscape home">
+          <span class="dream-mark" aria-hidden="true">
+            <span class="mark-arch"></span>
+            <span class="mark-step one"></span>
+            <span class="mark-step two"></span>
+            <span class="mark-step three"></span>
+            <span class="mark-sun"></span>
+            <span class="mark-leaf"></span>
+          </span>
+          <span><strong>Umuzi Dreamscape</strong><small>Learner workspace</small></span>
+        </a>
+
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="global-search" type="search" placeholder="Search builds, people, or skills" />
+          <kbd>/</kbd>
+        </label>
+
+        <div class="topbar-actions">
+          <button class="icon-button notification-button" type="button" aria-label="Notifications">
+            ♢<span aria-hidden="true"></span>
+          </button>
+          <button class="profile-button" id="profile-menu" type="button" aria-label="Open account menu">
+            <span class="avatar" id="profile-avatar">QC</span>
+            <span><strong id="profile-name">quantum_cupcake</strong><small>Builder</small></span>
+          </button>
+          <button class="button button-quiet" id="sign-out" type="button">Sign out</button>
         </div>
       </header>
 
-      <div class="grid">
-        <section>
-          <span class="eyebrow">Launch page</span>
-          <h2>Builds, feedback, stickers, tasks, and portfolio evidence.</h2>
-          <p>
-            This GitHub launch page keeps the project shareable and gives learners a simple
-            place to download the mobile wrappers. The full interactive app code lives in
-            the repository and runs with the included Next.js server.
-          </p>
-          <div class="downloads">
-            <a class="primary" href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-Android-debug.apk">
-              Download Android APK
-              <small>4.1 MB debug build</small>
-            </a>
-            <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-iOS-wrapper.zip">
-              Download iOS wrapper
-              <small>221 KB Capacitor archive</small>
-            </a>
-            <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-Desktop-Browser-App.zip">
-              Download desktop launcher
-              <small>Windows browser app package</small>
-            </a>
-          </div>
-          <div class="panel">
-            <strong>Demo login</strong>
-            <p>username: quantum_cupcake<br />password: dreamscape</p>
-          </div>
-          <div class="panel">
-            <strong>Desktop browser app</strong>
-            <p>
-              In Chrome or Edge, use the desktop app button or the browser install
-              option to keep Umuzi Dreamscape in its own window.
-            </p>
-          </div>
-        </section>
+      <div class="workspace">
+        <aside class="sidebar" id="sidebar" aria-label="Workspace navigation">
+          <nav>
+            <p class="nav-label">Workspace</p>
+            <button class="nav-button active" type="button" data-nav="home"><span>⌂</span>Home</button>
+            <button class="nav-button" type="button" data-nav="builds"><span>▦</span>Builds</button>
+            <button class="nav-button" type="button" data-nav="sandbox"><span>▷</span>Live sandbox</button>
+            <button class="nav-button" type="button" data-nav="chat"><span>◌</span>Project chat <b id="chat-count">3</b></button>
+            <button class="nav-button" type="button" data-nav="tasks"><span>✓</span>Tasks</button>
+            <button class="nav-button" type="button" data-nav="evidence"><span>◇</span>Evidence</button>
+            <p class="nav-label">Get the app</p>
+            <button class="nav-button" type="button" data-nav="downloads"><span>↓</span>Downloads</button>
+          </nav>
 
-        <section class="preview" aria-label="Umuzi Dreamscape preview">
-          <div class="phone">
-            <span class="eyebrow">9:41</span>
-            <div class="card">
-              <h2>Hey, quantum_cupcake</h2>
-              <p>Open a project, paste a live URL, send stickers, and export evidence.</p>
-            </div>
-            <div class="card">
-              <strong>Nimbus Nook</strong>
-              <p>Prototype - mentor buddy matching and kind review nudges.</p>
-            </div>
+          <div class="streak-card">
+            <span class="streak-ring"><strong>7</strong><small>days</small></span>
+            <div><strong>Build streak</strong><p>One small update today keeps it alive.</p></div>
           </div>
-        </section>
+          <p class="sidebar-credit">A Quantumcupcakecreation</p>
+        </aside>
+
+        <main id="main-content" tabindex="-1">
+          <section class="view active" id="view-home" data-view="home">
+            <div class="page-heading home-heading">
+              <div>
+                <p class="eyebrow">Tuesday studio pulse</p>
+                <h1>Good morning, <span id="welcome-name">quantum_cupcake</span>.</h1>
+                <p>Three builds are moving. Pick one useful thing and ship it.</p>
+              </div>
+              <button class="button button-primary" type="button" data-open-build-modal><span>＋</span>New build</button>
+            </div>
+
+            <div class="metrics" aria-label="Workspace summary">
+              <article><span class="metric-icon leaf">↗</span><div><strong id="metric-builds">9</strong><small>active builds</small></div><em>+2 this week</em></article>
+              <article><span class="metric-icon sun">✓</span><div><strong id="metric-tasks">5</strong><small>tasks completed</small></div><em>on a roll</em></article>
+              <article><span class="metric-icon coral">♥</span><div><strong id="metric-feedback">34</strong><small>feedback notes</small></div><em>12 unread</em></article>
+              <article><span class="metric-icon lilac">◇</span><div><strong id="metric-evidence">8</strong><small>evidence pieces</small></div><em>portfolio ready</em></article>
+            </div>
+
+            <div class="dashboard-grid">
+              <section class="content-band focus-band">
+                <div class="section-heading">
+                  <div><p class="eyebrow">Continue building</p><h2>Your current focus</h2></div>
+                  <button class="text-button" type="button" data-nav="builds">See all builds →</button>
+                </div>
+                <div id="focus-build"></div>
+              </section>
+
+              <aside class="content-band daily-card">
+                <img src="./stickers/keep-shipping.png" alt="Keep shipping sticker" />
+                <p class="eyebrow">Daily nudge</p>
+                <h2>Make the next step tiny.</h2>
+                <p>Progress gets easier when the next action fits inside twenty minutes.</p>
+                <button class="button button-secondary" type="button" data-nav="tasks">Choose a task</button>
+              </aside>
+            </div>
+
+            <section class="content-band">
+              <div class="section-heading">
+                <div><p class="eyebrow">Community activity</p><h2>Fresh from the build floor</h2></div>
+                <div class="filter-pills" role="group" aria-label="Activity filter">
+                  <button class="active" type="button" data-feed-filter="all">All</button>
+                  <button type="button" data-feed-filter="feedback">Feedback</button>
+                  <button type="button" data-feed-filter="milestone">Milestones</button>
+                </div>
+              </div>
+              <div class="activity-list" id="activity-list"></div>
+            </section>
+          </section>
+
+          <section class="view" id="view-builds" data-view="builds" hidden>
+            <div class="page-heading">
+              <div><p class="eyebrow">Project studio</p><h1>Builds</h1><p>Explore learner work, follow progress, and open a project room.</p></div>
+              <button class="button button-primary" type="button" data-open-build-modal><span>＋</span>New build</button>
+            </div>
+            <div class="build-toolbar">
+              <div class="filter-pills" id="build-filters">
+                <button class="active" type="button" data-build-filter="all">All</button>
+                <button type="button" data-build-filter="Prototype">Prototype</button>
+                <button type="button" data-build-filter="Build">Building</button>
+                <button type="button" data-build-filter="Testing">Testing</button>
+              </div>
+              <span id="build-result-count">9 projects</span>
+            </div>
+            <div class="build-grid" id="build-grid"></div>
+          </section>
+
+          <section class="view" id="view-sandbox" data-view="sandbox" hidden>
+            <div class="page-heading">
+              <div><p class="eyebrow">Embedded project lab</p><h1>Live sandbox</h1><p>Preview learner sites in place, then open them in a clean browser tab.</p></div>
+              <span class="live-status"><i></i> Preview ready</span>
+            </div>
+            <div class="sandbox-layout">
+              <aside class="project-switcher" id="sandbox-projects" aria-label="Sandbox projects"></aside>
+              <section class="browser-frame">
+                <div class="browser-toolbar">
+                  <div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                  <label class="address-bar">
+                    <span>⌕</span>
+                    <input id="sandbox-url" inputmode="url" aria-label="Project URL" />
+                  </label>
+                  <button class="icon-button" id="sandbox-reload" type="button" aria-label="Reload preview">↻</button>
+                  <a class="icon-button" id="sandbox-open" href="./project.html?id=nimbus-nook" target="_blank" rel="noreferrer" aria-label="Open project in new tab">↗</a>
+                </div>
+                <div class="sandbox-stage">
+                  <iframe id="sandbox-frame" title="Live project preview" sandbox="allow-forms allow-modals allow-popups allow-same-origin allow-scripts"></iframe>
+                  <div class="sandbox-loading" id="sandbox-loading"><span></span><p>Opening project preview…</p></div>
+                </div>
+                <div class="sandbox-footer">
+                  <span id="sandbox-title">Nimbus Nook</span>
+                  <span>Some external sites block embedding; use ↗ when that happens.</span>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section class="view" id="view-chat" data-view="chat" hidden>
+            <div class="page-heading compact-heading">
+              <div><p class="eyebrow">Kind, useful, specific</p><h1>Project chat</h1></div>
+            </div>
+            <div class="chat-layout">
+              <aside class="room-list" id="room-list" aria-label="Project rooms"></aside>
+              <section class="chat-room">
+                <header class="chat-header">
+                  <div><span class="avatar leaf-avatar" id="chat-avatar">NN</span><span><strong id="chat-title">Nimbus Nook</strong><small><i></i> 6 learners online</small></span></div>
+                  <button class="button button-quiet" type="button" data-nav="sandbox">Open build</button>
+                </header>
+                <div class="message-list" id="message-list" aria-live="polite"></div>
+                <div class="sticker-tray" id="sticker-tray" hidden></div>
+                <form class="chat-composer" id="chat-form">
+                  <button class="icon-button" id="sticker-toggle" type="button" aria-label="Choose a sticker">◇</button>
+                  <input id="chat-input" autocomplete="off" placeholder="Share a thoughtful update…" />
+                  <button class="button button-primary" type="submit">Send <span>↑</span></button>
+                </form>
+              </section>
+            </div>
+          </section>
+
+          <section class="view" id="view-tasks" data-view="tasks" hidden>
+            <div class="page-heading">
+              <div><p class="eyebrow">Momentum board</p><h1>Tasks</h1><p>Keep work visible and move it forward one step at a time.</p></div>
+            </div>
+            <form class="task-quick-add" id="task-form">
+              <input id="task-input" required placeholder="Add a clear next step" />
+              <select id="task-project" aria-label="Choose project"></select>
+              <button class="button button-primary" type="submit">Add task</button>
+            </form>
+            <div class="task-board" id="task-board"></div>
+          </section>
+
+          <section class="view" id="view-evidence" data-view="evidence" hidden>
+            <div class="page-heading">
+              <div><p class="eyebrow">Portfolio proof</p><h1>Evidence locker</h1><p>Turn project moments into clear proof of skill and impact.</p></div>
+              <button class="button button-primary" id="export-evidence" type="button">Export summary ↓</button>
+            </div>
+            <div class="evidence-grid" id="evidence-grid"></div>
+          </section>
+
+          <section class="view" id="view-downloads" data-view="downloads" hidden>
+            <div class="page-heading">
+              <div><p class="eyebrow">Take Dreamscape with you</p><h1>App downloads</h1><p>Use the web app anywhere or keep it close on mobile and desktop.</p></div>
+              <button class="button button-primary" id="install-app" type="button">Install web app</button>
+            </div>
+            <div class="download-grid">
+              <article><span class="download-platform">Android</span><h2>Android app</h2><p>Install the current debug build on a compatible Android device.</p><a class="button button-primary" href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-Android-debug.apk">Download APK ↓</a><small>4.1 MB</small></article>
+              <article><span class="download-platform">iOS</span><h2>iOS wrapper</h2><p>Open the Capacitor project in Xcode to sign and install it on iPhone.</p><a class="button button-secondary" href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-iOS-wrapper.zip">Download wrapper ↓</a><small>221 KB</small></article>
+              <article><span class="download-platform">Windows</span><h2>Desktop launcher</h2><p>Launch Dreamscape in its own focused browser window on Windows.</p><a class="button button-secondary" href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape/releases/download/v0.1.2/Umuzi-Dreamscape-Desktop-Browser-App.zip">Download desktop app ↓</a><small>ZIP package</small></article>
+            </div>
+          </section>
+        </main>
       </div>
 
-      <footer>
-        <span>Created by quantum_cupcake</span>
-        <span>
-          Independent concept demo for learning and portfolio exploration. No affiliation
-          or endorsement is implied.
-        </span>
+      <footer class="site-footer">
+        <span>A Quantumcupcakecreation</span>
+        <span>Independent concept demo for learning and portfolio exploration. No affiliation or endorsement is implied.</span>
+        <a href="https://github.com/cosmicbubblegumgirl/Umuzi_Dreamscape" target="_blank" rel="noreferrer">View project source ↗</a>
       </footer>
-    </main>
-    <script>
-      const installLink = document.querySelector("[data-install-desktop]");
-      let desktopPrompt;
+    </div>
 
-      window.addEventListener("beforeinstallprompt", (event) => {
-        event.preventDefault();
-        desktopPrompt = event;
-        if (installLink) installLink.textContent = "Install desktop app";
-      });
+    <dialog class="build-dialog" id="build-dialog">
+      <form method="dialog" class="dialog-card" id="build-form">
+        <div class="dialog-heading">
+          <div><p class="eyebrow">New project</p><h2>Start a build</h2></div>
+          <button class="icon-button" id="close-build-dialog" type="button" aria-label="Close dialog">×</button>
+        </div>
+        <label>Project name<input name="title" required placeholder="Something memorable" /></label>
+        <div class="form-pair">
+          <label>Stage<select name="stage"><option>Idea</option><option selected>Prototype</option><option>Build</option><option>Testing</option></select></label>
+          <label>Sector<input name="sector" placeholder="e.g. Learning tools" /></label>
+        </div>
+        <label>Short story<textarea name="summary" required placeholder="What are you making, and who is it for?"></textarea></label>
+        <label>Live URL <input name="url" type="url" placeholder="https://your-project.example" /></label>
+        <button class="button button-primary button-wide" value="default" type="submit">Create build</button>
+      </form>
+    </dialog>
 
-      installLink?.addEventListener("click", async (event) => {
-        if (!desktopPrompt) return;
-        event.preventDefault();
-        await desktopPrompt.prompt();
-        desktopPrompt = undefined;
-      });
-
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("./sw.js").catch(() => undefined);
-        });
-      }
-    </script>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js" defer></script>
   </body>
 </html>
