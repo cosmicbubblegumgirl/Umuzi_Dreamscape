@@ -167,36 +167,20 @@ const projectSeeds = [
     url: "https://cosmicbubblegumgirl.github.io/pantrypilot/",
   },
   {
-    id: "hiresignal",
-    title: "HireSignal",
-    owner: "Signal Sanele",
-    initials: "HS",
-    role: "Recruiting systems builder",
-    sector: "Future of work",
-    summary: "A recruiting workspace for structured feedback, clear stage ownership, candidate updates, and evidence-led decisions.",
-    stage: "Live",
-    progress: 100,
-    likes: 96,
-    tags: ["Hiring", "Workflow", "Evidence"],
-    art: "eco",
-    live: true,
-    url: "https://cosmicbubblegumgirl.github.io/hiresignal/",
-  },
-  {
     id: "greengrid",
     title: "GreenGrid",
     owner: "quantum_cupcake",
     initials: "QC",
-    role: "Climate data builder",
-    sector: "Energy intelligence",
-    summary: "An energy operations dashboard that turns facility anomalies into prioritized actions, savings estimates, and carbon context.",
+    role: "Environmental action builder",
+    sector: "Student sustainability",
+    summary: "A positive environmental action tracker that helps student teams record progress and build greener habits together.",
     stage: "Live",
     progress: 100,
     likes: 131,
-    tags: ["Energy", "Climate", "Operations"],
+    tags: ["Climate", "Action", "Student teams"],
     art: "eco",
     live: true,
-    url: "https://cosmicbubblegumgirl.github.io/greengrid/",
+    url: "https://cosmicbubblegumgirl.github.io/greengrid-action-tracker/",
   },
   {
     id: "ledgerlift",
@@ -318,10 +302,11 @@ const featuredSandboxIds = [
   "sap-spellbook",
   "focusflux",
   "pantrypilot",
-  "hiresignal",
   "greengrid",
   "ledgerlift",
 ];
+
+const retiredBuildIds = new Set(["hiresignal"]);
 
 const seedState = {
   builds: projectSeeds,
@@ -390,7 +375,9 @@ function mergeSeedBuilds(savedBuilds) {
     const saved = savedById.get(seed.id);
     return saved ? { ...seed, likes: saved.likes ?? seed.likes } : seed;
   });
-  const learnerBuilds = savedBuilds.filter((build) => !managedIds.has(build.id));
+  const learnerBuilds = savedBuilds.filter(
+    (build) => !managedIds.has(build.id) && !retiredBuildIds.has(build.id),
+  );
   return [...managedBuilds, ...learnerBuilds];
 }
 

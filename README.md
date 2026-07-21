@@ -27,8 +27,7 @@ The Embedded Project Lab includes these live builds:
 - [SAP Spellbook Academy](https://cosmicbubblegumgirl.github.io/the-plan-of-action/)
 - [FocusFlux](https://cosmicbubblegumgirl.github.io/focusflux/)
 - [PantryPilot](https://cosmicbubblegumgirl.github.io/pantrypilot/)
-- [HireSignal](https://cosmicbubblegumgirl.github.io/hiresignal/)
-- [GreenGrid](https://cosmicbubblegumgirl.github.io/greengrid/)
+- [GreenGrid](https://cosmicbubblegumgirl.github.io/greengrid-action-tracker/)
 - [LedgerLift](https://cosmicbubblegumgirl.github.io/ledgerlift/)
 
 Desktop browser app:
@@ -67,7 +66,7 @@ enough for career development while still feeling welcoming and community-led.
 - Project chat with reactions, messages, attachments, and real sticker artwork.
 - Shared task board for moving work through To do, Doing, and Done.
 - Evidence export surface for turning project progress into a portfolio story.
-- Seeded demo projects include the thirteen live Project Lab builds alongside
+- Seeded demo projects include the twelve live Project Lab builds alongside
   FlowForge Exam Lab, EcoTrack, and SAP CAP Simulator.
 - Custom Umuzi Dreamscape mark and favicon.
 

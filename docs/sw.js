@@ -1,9 +1,9 @@
-const CACHE_NAME = "umuzi-dreamscape-pages-v3";
+const CACHE_NAME = "umuzi-dreamscape-pages-v4";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css?v=3",
-  "./app.js?v=3",
+  "./app.js?v=4",
   "./project.html?id=nimbus-nook",
   "./project.css",
   "./project.js",
